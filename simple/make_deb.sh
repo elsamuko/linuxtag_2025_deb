@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# exit on error
+set -e
+
 # make new file permissions 755/644
 umask 0022
 
