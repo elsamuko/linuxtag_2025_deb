@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+clean:
+	echo clean
+
+build:
+	echo build
+
+binary:
+	echo binary
+	dh_makeshlibs
+	dh_gencontrol
+	dh_builddeb
+	dh_installman
