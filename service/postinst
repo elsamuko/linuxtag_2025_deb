@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -e
+
+case "$1" in
+    configure)
+        echo "Copying service"
+        cp /usr/share/linuxtag/linuxtag.service /usr/lib/systemd/system/linuxtag.service
+
+        echo "Reloading services"
+        systemctl daemon-reload
+
+        echo "Enabling service"
+        deb-systemd-helper enable linuxtag.service
+
+        echo "Starting service"
+        deb-systemd-helper start linuxtag.service
+        ;;
+
+    abort-upgrade | abort-remove | abort-deconfigure) ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
