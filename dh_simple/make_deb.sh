@@ -4,6 +4,7 @@
 # exit on error
 set -e
 
+if [ -d linuxtag-2025 ]; then rm -rf linuxtag-2025; fi
 mkdir -p linuxtag-2025/debian/linuxtag/usr/bin
 cp linuxtag_2025.py linuxtag-2025/debian/linuxtag/usr/bin/linuxtag_2025
 
@@ -30,4 +31,4 @@ echo "debian/linuxtag.1" > linuxtag-2025/debian/linuxtag.manpages
 ronn --roff --pipe --name=linuxtag ../simple/linuxtag_2025.1.ronn > linuxtag-2025/debian/linuxtag.1
 
 cd linuxtag-2025
-dpkg-buildpackage -b
+dpkg-buildpackage -b --no-sign
