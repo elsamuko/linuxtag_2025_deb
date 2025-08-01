@@ -1,0 +1,10 @@
+[Unit]
+Description=Linuxtag service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/linuxtag_2025
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
