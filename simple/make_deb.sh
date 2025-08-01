@@ -32,7 +32,10 @@ Description: Example package for Linuxtag
  Some more details...
 EOF
 
+# changelog
 gzip -n -9 -c CHANGELOG > linuxtag-2025/usr/share/doc/linuxtag/changelog.Debian.gz
+
+# manpage
 ronn --roff --pipe --name=linuxtag linuxtag_2025.1.ronn | gzip -n -9 -c > linuxtag-2025/usr/share/man/man1/linuxtag_2025.1.gz
 
 dpkg-deb --root-owner-group --build linuxtag-2025
