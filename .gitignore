@@ -8,5 +8,6 @@
 !*.py
 !*.sp
 !*.md
+!*.ronn
 
 linuxtag-2025/
