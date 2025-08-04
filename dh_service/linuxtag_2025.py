@@ -7,7 +7,7 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.end_headers()        
-        self.wfile.write("Hello from Linuxtag".encode())
+        self.wfile.write("Hello from Linuxtag with debhelper".encode())
 
 
 if __name__ == "__main__":

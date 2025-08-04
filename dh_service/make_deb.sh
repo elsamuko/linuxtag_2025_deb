@@ -5,8 +5,12 @@
 set -e
 
 if [ -d linuxtag-2025 ]; then rm -rf linuxtag-2025; fi
-mkdir -p linuxtag-2025/debian/linuxtag/usr/bin
-cp linuxtag_2025.py linuxtag-2025/debian/linuxtag/usr/bin/linuxtag_2025
+mkdir -p linuxtag-2025/debian
+cp linuxtag_2025.py linuxtag-2025/linuxtag_2025
+
+cat << EOF > linuxtag-2025/debian/install
+linuxtag_2025 usr/bin
+EOF
 
 # https://www.debian.org/doc/debian-policy/ch-controlfields.html
 cat << EOF > linuxtag-2025/debian/control
@@ -23,7 +27,7 @@ Description: Example package for Linuxtag
  Some more details...
 EOF
 
-# cp linuxtag.service linuxtag-2025/debian
+cp linuxtag.service linuxtag-2025/debian
 cp rules linuxtag-2025/debian
 # https://manpages.debian.org/testing/debhelper/debhelper-compat-upgrade-checklist.7.en.html
 echo 12 > linuxtag-2025/debian/compat

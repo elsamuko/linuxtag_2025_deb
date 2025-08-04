@@ -1,15 +1,5 @@
 #!/usr/bin/make -f
+DH_VERBOSE=1
 
-clean:
-	echo clean
-
-build:
-	echo build
-
-binary:
-	echo binary
-	dh_makeshlibs
-	dh_installsystemd
-	dh_gencontrol
-	dh_builddeb
-	dh_installman
+%:
+	dh $@
