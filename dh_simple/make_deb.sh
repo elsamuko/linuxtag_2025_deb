@@ -12,6 +12,11 @@ cat << EOF > linuxtag-2025/debian/install
 linuxtag_2025 usr/bin
 EOF
 
+cat << EOF > linuxtag-2025/debian/copyright
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Copyright 2025 Samuel <elsamuko@gmail.com>
+EOF
+
 # https://www.debian.org/doc/debian-policy/ch-controlfields.html
 cat << EOF > linuxtag-2025/debian/control
 Source: linuxtag
@@ -31,8 +36,9 @@ cp rules linuxtag-2025/debian
 # https://manpages.debian.org/testing/debhelper/debhelper-compat-upgrade-checklist.7.en.html
 echo 12 > linuxtag-2025/debian/compat
 cp ../simple/CHANGELOG linuxtag-2025/debian/changelog
-echo "debian/linuxtag.1" > linuxtag-2025/debian/linuxtag.manpages
-ronn --roff --pipe --name=linuxtag ../simple/linuxtag_2025.1.ronn > linuxtag-2025/debian/linuxtag.1
+echo "debian/linuxtag_2025.1" > linuxtag-2025/debian/linuxtag.manpages
+ronn --roff --pipe --name=linuxtag_2025 ../simple/linuxtag_2025.1.ronn > linuxtag-2025/debian/linuxtag_2025.1
 
 cd linuxtag-2025
 dpkg-buildpackage -b --no-sign
+lintian ../linuxtag_1.0-1_all.deb

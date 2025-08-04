@@ -11,7 +11,7 @@ separator "version"
 linuxtag_2025 --version
 
 separator "man"
-man linuxtag | tee
+man linuxtag_2025 | tee
 
 separator "uninstall"
 sudo apt remove -y linuxtag
