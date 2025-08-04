@@ -1,0 +1,12 @@
+*
+
+!.gitignore
+
+!*/
+
+!CHANGELOG
+!*.py
+!*.sp
+!*.md
+
+linuxtag-2025/
