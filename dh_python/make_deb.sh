@@ -2,6 +2,8 @@
 # python3 -m pip install uv --b
 # sudo apt install python3-hatchling
 
+PATH="$PATH":~/.local/bin
+
 if [ -d linuxtag ]; then
     rm -rf linuxtag*
 fi
